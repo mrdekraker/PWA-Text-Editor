@@ -1,18 +1,19 @@
 {
   "name": "JATE",
   "version": "1.0.0",
-  "description": "",
+  "description": "Text Editor that meets PWA criteria and meets data persistence techniques",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "dev": "webpack-dev-server",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
+    "client": "cd client && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mark DeKraker",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
@@ -21,5 +22,13 @@
   "devDependencies": {
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrdekraker/PWA-Text-Editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrdekraker/PWA-Text-Editor/issues"
+  },
+  "homepage": "https://github.com/mrdekraker/PWA-Text-Editor#readme"
 }
